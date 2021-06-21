@@ -1,0 +1,46 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+}
+header {
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header img {
+  width: 80px;
+  max-height: 90%;
+  margin: 5%;
+}
+footer {
+  background-color: #04274B;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.2em;
+  padding: 10px;
+}
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;  
+}
+section {
+  margin-top: 20px;
+}
+.btn {
+  background: #50c4bd;
+  padding: 10px;
+  border: none;
+  width: 90%;
+  margin: 0 5% 5% 5%;
+  color: #ffffff;
+}
+.card {
+  margin: 5%;
+  width: 85%;
+  border: solid 1px #eaeaea;
+  padding: 2.5%;
+  box-shadow: 0 0 0.5em #eaeaea;
+}
