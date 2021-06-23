@@ -1,88 +1,58 @@
 # Birdie Developer Test
 
-We would like to thank you for taking our developer test. We understand that candidates will often have many of these tests to complete, therefore we think it's important to cut straight to the important stuff.
+[![Frontend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/frontend-heroku-deploy.yml/badge.svg)](https://github.com/xanwerneck/birdie-test/)
+[![Backend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/backend-heroku-deploy.yml/badge.svg)](https://github.com/xanwerneck/birdie-test/)
 
-## About this repository
+Birdie test is an implementation of a challenge in the context of Birdie Company. To know more about Birdie just go to the link [Birdie](https://www.birdie.care/), and all information about the challenge is on [Birdie Github Challenge](https://github.com/birdiecare/birdie-test/). 
 
-We've gone ahead and created a boilerplate that mostly represents the kind of technical stack we work with. The `backend/` is a barebone Express server and the `frontend/` has been generated with `npx create-react-app frontend --template typescript`. this saves you from having to create boilerplate code, but you are free to decide to use only parts of it, for example:
+The most important parts of the project are located in /frontend and /backend folders. The first one is a React implementation consuming services provided by the second, a Node application.
 
-- If you prefer to use Javascript rather than Typescript, you can use `npx create-react-app frontend`.
-- If you want to use Redux, you can use `npx create-react-app frontend --template redux` or `npx create-react-app frontend --template redux-typescript`.
+From the Birdie repository, the **context** is defined by: 
 
-## Context
+*At Birdie, our app allows care givers to record observations of older adults receiving care, we name them care recipients.*
 
-At Birdie, our app allows care givers to record observations of older adults receiving care, we name them **care recipients**.
+*These could be anything from the recording of their mood (happy, sad, bored, confused) to what they drank today (1 pint of water).*
 
-These could be anything from the recording of their mood (happy, sad, bored, confused) to what they drank today (1 pint of water).
+Again, from the **challenge description**:
 
-Each of these observations are recorded as events in our database. Here's an example of a mood observation recorded
-in this event format:
-
-``` json
-{  
-   "id":"decaa026-2ce5-49cb-aff9-92326b85a98c",
-   "event_type":"mood_observation",
-   "visit_id":"39b94aab-cc35-4874-807f-c23472aec663",
-   "timestamp":"2019-04-23T10:53:13+01:00",
-   "caregiver_id":"4786d616-259e-4d52-80f7-8cf7dc6d881a",
-   "care_recipient_id":"03f3306d-a4a3-4179-ab88-81af66df8b7c",
-   "mood":"okay",
-},
-```
-
-Here's a quick explanation of the base properties:
-
-- `id`: Uniquely identifies the observation.
-- `event_type`: Title we use to categorise our events.
-- `visit_id`: Observations are traditionally observed during a visit between the caregiver (carer) and care recipient. This ID identifies that visit.
-- `caregiver_id`: Identifies who the caregiver (carer) was that made this observation.
-- `care_recipient_id`: Identifies the care recipient this observation is for.
-
-On top of that, there can be **additional properties** based on the `event_type`:
-
-- `mood` describes the mood of the care recipient as reported by the caregiver
-
-The database (we should have sent you credentials) contains some of these observation events, within the `events` table.
-
-## Challenge
-
-*Display the information to a family member*
-
-#### Your challenge is to clone this repository and create a small web application to visualize these observations, so that looking at it is valuable to a family member of this care recipient
-
-This could mean presenting it in the following forms:
-
-- A table
-- A graph
-- A timeline
-
- Or any other way/combination of those. We are test driven here at Birdie so please make sure you write tests to validate your work.
-
-## Deliverables
-
-- Put your code on Github and send us the link to the repository
-- Deploying the code to a platform like [Heroku](https://heroku.com) is a great plus.
-- **If you are unable to deploy your code please send a recording of the application working**
+*Your challenge is to clone ... repository and create a small web application to visualize these observations, so that looking at it is valuable to a family member of this care recipient*
 
 ## Set up
 
-Here's the technical stack this boilerplate was made with:
+*Here's the technical stack this boilerplate was made with*. And also, the infrastructure created for **continuous integration**, **continuous deployment**, and **cloud server** to serve the application.
+
+**It's an amazing part** that I wanna talk about this repository, the challenge, and my implementation. At the first time, I was thinking only in the context of the challenge, creating a great customer experience for Birdie clients. For sure, it's really important, but what about some questions?
+
+- Some clients didn't like the first deploy
+- Bugs are occurring for some users
+- Deploys need to go faster for the customers
+
+To answer that... I built this project taking care at most in a continuous deployment environment, and sure, covering with tests endpoints and components, in a TDD perspective. For the next deployment, we can go really fast with tested codes. 
 
 ### Front end
 
 - [React](https://reactjs.org/)
-- [Redux](https://redux.js.org/introduction/getting-started)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Redux sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
-- [Styled components](https://www.styled-components.com/)
 
 ### Back end
 
+- [NodeJS](https://nodejs.org)
 - [Express](https://expressjs.com/)
-- [MySQL](https://www.mysql.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Sequelize](https://sequelize.org/)
+- [Node MySQL2](https://www.npmjs.com/package/mysql2)
 
-## Usage
+### CI / CD
+
+- [Github actions](https://docs.github.com/pt/actions)
+
+### Deploy server
+
+- [Heroku](https://www.heroku.com/)
+
+### Usage
+
+*The usage description is the same as the challenge description*
 
 1. Start the API. (Run the following commands within the `backend` folder)
 
@@ -111,3 +81,7 @@ Here's the technical stack this boilerplate was made with:
    ```bash
    npm start
    ```
+
+### Feedback and support
+
+Please, feel free to contact me about this project, will be a pleasure to talk about it.
