@@ -7,6 +7,8 @@ import { Header } from './components/Header';
 
 import { TypeEvent } from './type/Event';
 
+const UrlEndpoint = process.env.REACT_APP_HOST_API || 'https://birdie-back-end.herokuapp.com'
+
 const App = () => {
   const [events, setEvents] = useState<TypeEvent[]>([])
   const [page, setPage] = useState(0)
@@ -14,7 +16,7 @@ const App = () => {
 
   const LoadData = useCallback(
     () => {
-      fetch(`${process.env.REACT_APP_HOST_API}/event/${page}`)
+      fetch(`${UrlEndpoint}/event/${page}`)
       .then((data : Response) => {
         return data.json()      
       })
