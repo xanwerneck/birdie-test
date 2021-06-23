@@ -1,18 +1,37 @@
 import { TypeEvent } from "../type/Event";
 
 type CardProps = {
-    event : TypeEvent,
-    i : number
+    event : TypeEvent
 }
 
-export const Card = ({event, i} : CardProps) => {
+const ToWords = (event_type : string) => {
+    var words = event_type.split('_')
+    words[0]  = `${words[0].charAt(0).toUpperCase()}${words[0].slice(1)}` 
+    return words.join(' ')
+}
+
+export const Card = ({event} : CardProps) => {
     return (
         <div 
         className="card" 
-        key={i}>
-            <h4>{event.id}</h4>
+        key={event.id}>
+            <p>
+                <span>Activity: </span>
+                <strong>  
+                    {ToWords(event.event_type)}
+                </strong>
+            </p>
+            <p>
+                <span>Observed by: </span>
+                <strong>  
+                    {event.caregiver_id}
+                </strong>
+            </p>
             <h6>
-                {(new Date(event.timestamp.substr(0,10))).toLocaleDateString()}
+                <span>Date: </span>
+                <strong>  
+                    {(new Date(event.timestamp)).toLocaleString()}
+                </strong> 
             </h6>
         </div>
     )

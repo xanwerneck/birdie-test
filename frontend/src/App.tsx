@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
 import { Card } from './components/Card';
@@ -12,51 +12,45 @@ const App = () => {
   const [page, setPage] = useState(0)
   const [moreData, setMoreData] = useState(true)
 
-  useEffect(() => {
-    LoadData(page)
-  }, [])
+  const LoadData = useCallback(
+    () => {
+      fetch(`${process.env.REACT_APP_HOST_API}/event/${page}`)
+      .then((data : Response) => {
+        return data.json()      
+      })
+      .then(list_event => {
+        if (list_event.rows.length) {
+          setEvents(prevEvents => [...prevEvents, ...list_event.rows])
+        }else{
+          setMoreData(moreData => !moreData)
+        }
+      })
+      .catch(error => alert(error.message))
+    },
+    [page]
+  )
 
-  const LoadData = (pageRow : number) => {
-    fetch(`${process.env.REACT_APP_HOST_API}/event/${pageRow}`)
-    .then((data : Response) => {
-      return data.json()      
-    })
-    .then(list_event => {
-      if (list_event.rows.length > 0) {
-        setEvents(prevEvents => [...prevEvents, ...list_event.rows])
-        setPage(pageRow + 1)
-      }else{
-        setMoreData(!moreData)
-      }
-    })
-    .catch(error => alert(error.message))
-  } 
+  const LoadMore = () => setPage(page + 1)
 
-  var loadMore = () => {
-    LoadData(page)
-  }
+  useEffect(LoadData, [LoadData])
 
   return (
     <div className="container">
       <Header />
       <section>
-        <div>
+        <div className="events">
           {
-            events.map((event, i) => {
+            events.map((event, _) => {
               return(
-                <Card
-                event={event}
-                i={i}
-                />
+                <Card event={event}/>
               )
             })
           }
         </div>
         {
           moreData ? (
-            <button 
-            className="btn"
-            onClick={loadMore}>
+            <button className="btn"
+            onClick={LoadMore}>
               Load more
             </button>
           ) : null

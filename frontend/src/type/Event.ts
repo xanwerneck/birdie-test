@@ -4,5 +4,6 @@ export interface TypeEvent {
     visit_id : string,
     caregiver_id : string,
     care_recipient_id : string,
-    timestamp : string
+    timestamp : string,
+    mood?: string
 }
