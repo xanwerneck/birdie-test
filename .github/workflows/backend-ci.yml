@@ -14,14 +14,15 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
-      - id: activity_install
-      - name: Install dependencies
-      - run: npm install
-      - id: activity_run
-      - name: Run tests for Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm test
-        working-directory: "backend"
+    - uses: actions/checkout@v1
+    - name: Test the backend Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+
+    - name: npm install and test
+      working-directory: "backend"
+      run: |
+        npm install
+        npm test
+      
