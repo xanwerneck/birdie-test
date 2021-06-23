@@ -4,8 +4,8 @@
 * - define static folder
 * - start listening
 */
-const express = require('express')
-import { resolve } from 'node:path'
+const express   = require('express')
+const {resolve} = require('path')
 
 const app  = express()
 const port = process.env.PORT || 3000 
