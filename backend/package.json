@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "backend",
   "license": "MIT",
   "files": [
@@ -14,7 +14,9 @@
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "tsc": "tsc",
+    "build": "tsc && node build/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -28,6 +30,7 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.2",
     "@types/supertest": "^2.0.11",
+    "@types/validator": "^13.1.4",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "coveralls": "^3.1.0",
