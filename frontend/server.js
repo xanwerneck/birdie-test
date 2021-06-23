@@ -4,7 +4,7 @@
 * - define static folder
 * - start listening
 */
-import express from 'express'
+const express = require('express')
 import { resolve } from 'node:path'
 
 const app  = express()
