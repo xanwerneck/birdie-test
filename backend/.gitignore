@@ -10,9 +10,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# locked files
-package-lock.json
-
 #others type / files
 .nyc_output
 lib
