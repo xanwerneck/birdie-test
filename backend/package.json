@@ -16,8 +16,9 @@
     "test:watch": "jest --watch",
     "dev": "nodemon",
     "tsc": "tsc",
-    "build": "tsc && node build/index.js",
-    "start": "build"
+    "build": "tsc",
+    "start": "node build/index.js",
+    "test:dev": "jest build/__tests__/*.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -51,7 +52,7 @@
   },
   "engines": {
     "node": "14.x"
-  },  
+  },
   "jest": {
     "preset": "ts-jest"
   }

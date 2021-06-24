@@ -1,14 +1,17 @@
+# test coreage and modules from npm
 coverage/
 node_modules/
 
 # production
 /build
 
+# log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#others type / files
 .nyc_output
 lib
 lib_test
 .env
-package-lock.json
