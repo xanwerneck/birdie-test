@@ -17,7 +17,8 @@
     "dev": "nodemon",
     "tsc": "tsc",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "test:dev": "jest build/__tests__/*.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
