@@ -1,8 +1,9 @@
 import app from '../src/application'
 import * as request from 'supertest';
+import { db } from '../src/config/db';
 
 describe('We are grateful to you for doing this it.', () => {
-  it('thanks you', async (done) => {
+  test('thanks you', async () => {
     await request(app)
       .get('/hello')
       .timeout(5000)
@@ -10,6 +11,9 @@ describe('We are grateful to you for doing this it.', () => {
       .expect(function(res) {
         expect(res.body.greetings).toContain('Thank you');
       });
-    done()
   })
+  afterAll(async (done) => {
+    db.sequelize.close()
+    done();
+  });
 });
