@@ -1,4 +1,4 @@
-name: Node.js Frontend CI
+name: React Frontend CI
 
 on:
   push:

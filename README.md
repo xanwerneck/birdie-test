@@ -2,6 +2,8 @@
 
 [![Frontend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/frontend-heroku-deploy.yml/badge.svg)](https://birdie-front-end.herokuapp.com/)
 [![Backend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/backend-heroku-deploy.yml/badge.svg)](https://birdie-back-end.herokuapp.com/)
+[![Frontend CI status](https://github.com/xanwerneck/birdie-test/actions/workflows/frontend-ci.yml/badge.svg)](https://birdie-front-end.herokuapp.com/)
+[![Backend CI status](https://github.com/xanwerneck/birdie-test/actions/workflows/backend-ci.yml/badge.svg)](https://birdie-back-end.herokuapp.com/)
 
 Birdie test is an implementation of a challenge in the context of Birdie Company. To know more about Birdie just go to the link [Birdie](https://www.birdie.care/), and all information about the challenge is on [Birdie Github Challenge](https://github.com/birdiecare/birdie-test/). 
 
@@ -85,3 +87,14 @@ To answer that... I built this project taking care at most in a continuous deplo
 ### Feedback and support
 
 Please, feel free to contact me about this project, will be a pleasure to talk about it.
+
+### Can be better - To do
+
+- **Coverage of interface tests (eg. App.tsx integration tests)**
+I'm looking for, in the next step, to create an integration test for the App.tsx component.
+The coverage of frontend tests is in the context of isolated components.
+- **UI/UX of the project**
+I was really focused on parts of CI/CD, test coverage, and Heroku deploy
+Also, I prefer hearing from a PD about some improvements that may I do
+- **CI/CD relation**
+For the future, I need to make an integration to make sure that CD will run just after CI passed
