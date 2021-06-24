@@ -21,11 +21,7 @@ eventController.get('/event/:page', (req, res) => {
     })
     .then((data : Json) => res.status(200).json(data))
     .catch((error : Error) => {
-        if(process.env.NODE_ENV === 'development'){
-            res.status(400).json(error)
-        }else{
-            res.status(400).json({message : error.message, name: error.name})
-        }
+        res.status(400).json(error)
     })
 })
 
@@ -42,10 +38,6 @@ eventController.get('/event/:page', (req, res) => {
     })
     .then((data : Json) => res.status(200).json(data))
     .catch((error : Error) => {
-        if(process.env.NODE_ENV === 'development'){
-            res.status(400).json(error)
-        }else{
-            res.status(400).json({message : error.message, name: error.name})
-        }
+        res.status(400).json(error)
     })
 });

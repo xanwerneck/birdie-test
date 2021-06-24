@@ -1,7 +1,7 @@
 # Birdie Developer Test
 
-[![Frontend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/frontend-heroku-deploy.yml/badge.svg)](https://github.com/xanwerneck/birdie-test/)
-[![Backend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/backend-heroku-deploy.yml/badge.svg)](https://github.com/xanwerneck/birdie-test/)
+[![Frontend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/frontend-heroku-deploy.yml/badge.svg)](https://birdie-front-end.herokuapp.com/)
+[![Backend Deploy status](https://github.com/xanwerneck/birdie-test/actions/workflows/backend-heroku-deploy.yml/badge.svg)](https://birdie-back-end.herokuapp.com/)
 
 Birdie test is an implementation of a challenge in the context of Birdie Company. To know more about Birdie just go to the link [Birdie](https://www.birdie.care/), and all information about the challenge is on [Birdie Github Challenge](https://github.com/birdiecare/birdie-test/). 
 
